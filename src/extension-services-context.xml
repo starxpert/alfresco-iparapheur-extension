@@ -8,44 +8,16 @@
         </bean>
         
         <bean id="iParapheurExtensionService" class="fr.starxpert.utils.IparapheurExtensionServiceImpl">
-        		<property name="NodeService" ref="nodeService" />
+                <property name="AuthenticationService" ref="authenticationService" />
+                <property name="UsersService" ref="usersService" />
     			<property name="listMetaToSearch">
 					<value>${extension.iparapheur.listMeta}</value>
 				</property>
-				<property name="ParapheurService" ref="parapheurService"/>
-				<property name="SearchService" ref="searchService"/>
-				<property name="DictionaryService" ref="dictionaryService"/>
-				
-				<property name="configuration">
-		            <props>
-		                <prop key="spaces.company_home.childname">${spaces.company_home.childname}</prop>
-		                <prop key="spaces.dictionary.childname">${spaces.dictionary.childname}</prop>
-		                <prop key="spaces.templates.email.childname">${spaces.templates.email.childname}</prop>
-		                <prop key="spaces.templates.content.childname">${spaces.templates.content.childname}</prop>
-		                <prop key="templates.signataires.childname">${templates.signataires.childname}</prop>
-		                <prop key="spaces.parapheurs.childname">${spaces.parapheurs.childname}</prop>
-		                <prop key="spaces.archives.childname">${spaces.archives.childname}</prop>
-		                <prop key="spaces.savedworkflows.childname">${spaces.savedworkflows.childname}</prop>
-		                <prop key="spaces.store">${spaces.store}</prop>
-		                <prop key="archive.ttfVerdana.location">${parapheur.archive.ttfVerdana.location}</prop>
-		                <prop key="archive.iccprofile.location">${parapheur.archive.iccprofile.location}</prop>
-		                <prop key="archive.tamponActes.prefixe">${parapheur.archive.tamponActes.prefixe}</prop>
-		                <prop key="signature.applet.url">${parapheur.signature.applet.url}</prop>
-		                <prop key="parapheur.habillage">${parapheur.habillage}</prop>
-		                <prop key="parapheur.ihm.document.uploadMaxSize">${parapheur.ihm.document.uploadMaxSize}</prop>
-		                <prop key="parapheur.preview.enabled">${parapheur.preview.enabled}</prop>
-		                <prop key="parapheur.ws.getdossier.pdf.enabled">${parapheur.ws.getdossier.pdf.enabled}</prop>
-		                <prop key="parapheur.ws.getdossier.pdf.docName">${parapheur.ws.getdossier.pdf.docName}</prop>
-		                <prop key="parapheur.ghostscript.path">${parapheur.ghostscript.path}</prop>
-		                <prop key="parapheur.ghostscript.dpi">${parapheur.ghostscript.dpi}</prop>
-		                <prop key="parapheur.mobilepreview.enabled">${parapheur.mobilepreview.enabled}</prop>
-		                <prop key="parapheur.mail.targetVersion">${parapheur.mail.targetVersion}</prop>
-		            </props>
-		        </property>				
-				<property name="NamespaceService" ref="namespaceService"/>
-				<property name="FileFolderService" ref="fileFolderService"/>
-				<property name="AuthenticationService" ref="authenticationService"/>
-				<property name="AuthorityService" ref="authorityService"/>
-
-        </bean>		
+                <property name="urlAlfresco">
+                    <value>${web.application.context.url}</value>
+                </property>
+                <property name="triggerModule">
+                    <value>${extension.iparapheur.triggerModule}</value>
+                </property>
+        </bean>
 </beans>
