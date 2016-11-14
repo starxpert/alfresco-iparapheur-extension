@@ -6,7 +6,8 @@
                 <property name="policyComponent" ref="policyComponent" />
                 <property name="iparapheurExtensionService" ref="iParapheurExtensionService" />
         </bean>
-        
+
+
         <bean id="iParapheurExtensionService" class="fr.starxpert.utils.IparapheurExtensionServiceImpl">
                 <property name="AuthenticationService" ref="authenticationService" />
                 <property name="UsersService" ref="usersService" />

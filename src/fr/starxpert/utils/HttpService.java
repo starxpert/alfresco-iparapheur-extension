@@ -92,26 +92,6 @@ public class HttpService extends Thread{
         return result;
     }
 
-    private String isAdmin(){
-
-        DefaultHttpClient httpClient = new DefaultHttpClient();
-        HttpGet message = new HttpGet(this.url + "/service/parapheur/utilisateurs/"+idUser+"?alf_ticket="+this.alfTicket);
-        String result = null;
-        try {
-            logger.debug("récupération des données de l'utilisateur");
-            HttpResponse response = httpClient.execute(message);
-            logger.info("appel utilisateurs : "+response.getStatusLine().toString());
-
-            HttpEntity entity = response.getEntity();
-            result = EntityUtils.toString(entity);
-            logger.debug(result);
-            EntityUtils.consume(entity);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return result;
-    }
-
     public void run(){
         try {
             //attente de 5 secondes car les infos utilisateurs ne sont parfois pas encore disponibles à l'appel du webscript utilisateurs
